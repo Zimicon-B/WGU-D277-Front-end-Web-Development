@@ -1,5 +1,6 @@
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif; /*D1 requirement*/
   margin: 0;
   padding: 0;
 }
@@ -23,7 +24,7 @@ nav a {
   margin: 0 10px;
 }
 
-nav a:hover {
+nav a:hover { /*D2 requirement*/
   color: yellow;
   text-decoration: underline;
 }
@@ -38,8 +39,13 @@ nav a.active {
   background: url('Pic/Arches.jpg') center/cover no-repeat;
   padding: 200px 20px;
   text-align: center;
+  font-weight: bold;
   color: white;
-  position: relative;
+  position: relative;  /*D5 requirement*/
+}
+
+.hero-title {
+  font-size: 48px;
 }
 
 .city-hero {
@@ -48,7 +54,7 @@ nav a.active {
 }
 
 .breadcrumb {
-  position: absolute;
+  position: absolute;  /*D4 requirement*/
   top: 10px;
   left: 15px;
   font-size: 0.9em;
@@ -80,8 +86,8 @@ main {
 .quick-facts {
   display: inline-block;
   vertical-align: top;
-  width: 33%;
-  float: right;
+  width: 50%;
+  float: right;  /*D3 requirement*/
 }
 
 .attractions {
@@ -89,14 +95,16 @@ main {
   justify-content: space-between;
   margin-top: 20px;
   gap: 10px;
+  list-style: none;
 }
 
 .attraction-item {
-  text-align: center;
+  text-align: center;  /*D6 Class Selector used twices on sames page requirement*/
   flex: 1;
 }
 
 .attraction-item img {
+  float: inline-start;
   width: 160%;
   max-width: 200px;
   height: 160px;
@@ -112,6 +120,7 @@ main {
   font-size: 0.9em;
 }
 
+/*
 .map-section img {
   width: 100%;
   border-radius: 6px;
@@ -124,8 +133,9 @@ main {
   font-weight: bold;
   text-align: center;
 }
+*/
 
-footer {
+footer {  /*D6 Element Selector requirement*/
   background: #222;
   color: #ccc;
   text-align: center;
@@ -144,23 +154,63 @@ footer p {
   margin: 0;
 }
 
-.form-page {
-  padding: 20px;
-  position: relative;
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-#question {
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 180px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.form-row input,
+.form-row textarea {
+  flex: 1;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.centered-vertical-list {
+  list-style-position: inside;
+  margin: 0 auto;
+  padding: 10px;
+  width: fit-content;
+  text-align: left;
+}
+
+.centered-horizontal-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: disc inside;
+  padding: 10px 0;
+}
+#question {   /*D6 ID Selector requirement*/
   position: relative;
   top: 10px; /* relative positioning */
 }
 
-/* CSS Selectors */
 button {
   background-color: teal;
   color: white;
   padding: 10px;
   border: none;
   cursor: pointer;
+  transform: scale(1.5);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .highlight {
@@ -172,7 +222,6 @@ button {
   color: red;
   font-weight: bold;
 }
-
 
 .city-cards {
   display: flex;
@@ -213,4 +262,15 @@ button {
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #0a0a0a;
+  margin: 40px 0; /* adds space above and below the line */
 }

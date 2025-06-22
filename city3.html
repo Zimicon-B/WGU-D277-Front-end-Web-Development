@@ -21,54 +21,41 @@
       <div class="breadcrumb">
         <a href="index.html">Home</a> ›Provo
       </div>
-      <h2>Welcome to Provo</h2>
+      <p class="hero-title">Welcome to Provo</p>
     </div>
   </header>
-  
+
   <main class="interior-layout">
     <section class="city-info">
       <h2>About Provo</h2>
-      <div class="city-nav-links">
-        <a href="#" onclick="showContent('demo')">Demographics</a> |
-        <a href="#" onclick="showContent('weather')">Weather Overview</a> |
-        <a href="#" onclick="showContent('history')">History & Culture</a> |
-        <a href="#" onclick="showContent('attractions')">Local Attractions</a>
-      </div>
-
-      <p id="city-description">
-        Click a category above to learn more about this city.
-      </p>
+      <h3>Provo City Overview</h3>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Key Facts</th>
+            <th>Highlights</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Demographics</td>
+            <td>Population ~114,000, Home to BYU</td>
+            <td>Young, highly educated, family-oriented</td>
+          </tr>
+          <tr>
+            <td>Weather</td>
+            <td>4-season climate, Hot summers, Snowy winters</td>
+            <td>Ideal for hiking, skiing, boating</td>
+          </tr>
+          <tr>
+            <td>History & Culture</td>
+            <td>Founded 1849, LDS roots, BYU established 1875</td>
+            <td>Historic sites, growing tech & arts scene</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
-
-    <script>
-      function showContent(topic) {
-        const desc = document.getElementById("city-description");
-        const content = {
-          demo: `
-            <p>Provo has a population of approximately 114,000 and is located in Utah County, central Utah. It has a predominantly young population due to the presence of Brigham Young University (BYU), one of the largest private universities in the country. The city has a high percentage of college-educated residents and maintains a strong academic and family-oriented atmosphere.</p>
-            <p>Provo features a growing tech sector and has been named one of the best places for business and careers in the U.S. The community is largely conservative, with strong ties to the LDS Church, and offers a high quality of life through educational, recreational, and entrepreneurial opportunities.</p>
-          `,
-          weather: `
-            <p>Provo experiences a temperate four-season climate. Winters are cold with occasional snowfall, while summers are hot and dry with temperatures regularly reaching the upper 80s and 90s (°F). Spring and fall are ideal for outdoor activities due to mild temperatures and scenic mountain views.</p>
-            <p>The proximity of Utah Lake and the Wasatch Mountains enhances recreational options year-round. Residents enjoy boating, fishing, skiing, hiking, and biking across the seasons, contributing to Provo’s reputation as an outdoor paradise.</p>
-          `,
-          history: `
-            <p>Founded in 1849, Provo was among the earliest Mormon settlements in Utah. The city developed quickly as a center for education and religion. Brigham Young University, established in 1875, became a cornerstone of the city’s growth and identity.</p>
-            <p>Today, Provo blends historical charm with modern innovation. Its downtown area is revitalized with restaurants, tech startups, and art venues. The city's history is preserved in landmarks like the Provo Pioneer Village and the Covey Center for the Arts.</p>
-          `,
-          attractions: `
-            <p>Provo’s attractions include BYU’s Museum of Art and Museum of Paleontology, which attract thousands of visitors annually. The scenic Provo Canyon features Bridal Veil Falls, a popular hiking and sightseeing destination just minutes from downtown.</p>
-            <p>The city also hosts the Provo Farmers Market and various cultural festivals throughout the year. Utah Lake State Park offers water-based recreation, while the Peaks Ice Arena—an Olympic venue—remains a popular spot for skating and events.</p>
-          `
-        };
-
-        desc.innerHTML = content[topic] || "<p>Click a category above to learn more about this city.</p>";
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        showContent('demo');
-      });
-    </script>
 
     <aside class="quick-facts">
       <h3>Quick Facts</h3>
@@ -91,20 +78,20 @@
         </li>
       </ul>
 
-      <div class="attractions">
-        <div class="attraction-item">
+      <ol class="attractions" style="list-style-type: none; padding-left: 0;">
+        <li class="attraction-item">
           <img src="Pic/BYU.jpeg" alt="BYU Museum">
           <span>BYU Museum</span>
-        </div>
-        <div class="attraction-item">
+        </li>
+        <li class="attraction-item">
           <img src="Pic/BridalFalls.jpg" alt="Bridal Veil Falls">
           <span>Bridal Veil Falls</span>
-        </div>
-        <div class="attraction-item">
+        </li>
+        <li class="attraction-item">
           <img src="Pic/IceArena.jpg" alt="Peaks Ice Arena">
           <span>Peaks Ice Arena</span>
-        </div>
-      </div>
+        </li>
+      </ol>
     </aside>
   </main>
 

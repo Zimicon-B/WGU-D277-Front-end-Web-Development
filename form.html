@@ -17,46 +17,66 @@
         <a href="form.html" class="active">Contact</a>
       </nav>
     </div>
+    <div class="hero">
+      <p class="hero-title">Welcome to Utah</p>
+      <p>Discover our Cities, Culture, and Nature</p>
+    </div>
   </header>
 
   <main class="form-page">
     <h2>Contact Us</h2>
-    <form>
-      <label for="fname">First Name:</label>
-      <input type="text" id="fname" name="fname" required><br>
+    <form class="contact-form">
+      <div class="form-row">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
 
-      <label for="lname">Last Name:</label>
-      <input type="text" id="lname" name="lname" required><br>
+      <div class="form-row">
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required>
+      </div>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required><br>
+      <div class="form-row">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
 
-      <label for="confirm_email">Confirm Email Address:</label>
-      <input type="email" id="confirm_email" name="confirm_email" required><br>
+      <div class="form-row">
+        <label for="confirm_email">Confirm Email Address:</label>
+        <input type="email" id="confirm_email" name="confirm_email" required>
+      </div>
 
-      <label for="question">Your Question:</label>
-      <textarea id="question" name="question" rows="5" cols="30"></textarea><br>
+      <div class="form-row">
+        <label for="question">Your Question:</label>
+        <textarea id="question" name="question" rows="5" cols="30"></textarea>
+      </div>
 
-      <button type="submit">Submit</button>
+      <div class="button-container">
+        <button type="submit">Submit</button>
+      </div>
     </form>
 
-    <section>
-      <h3>Resources</h3>
-      <p>Visit <a href="https://www.nps.gov" target="_blank">National Park Service</a> to explore more attractions.</p>
-    </section>
+    <hr>
 
     <section>
-      <h3>Our Values</h3>
-      <ol>
+      <h3 class="centered-heading">Our Values</h3>
+
+      <ol class="centered-vertical-list">
         <li>Community</li>
         <li>Transparency</li>
         <li>Innovation</li>
       </ol>
-      <ul>
+
+      <ul class="centered-horizontal-list">
         <li>Clean Water</li>
         <li>Public Safety</li>
         <li>Economic Growth</li>
       </ul>
+    </section>
+
+    <section>
+      <h3 class="centered-heading">Resources</h3>
+      <p class="centered-heading">Visit <a href="https://www.nps.gov" target="_blank">National Park Service</a> to explore more attractions.</p>
     </section>
   </main>
 
@@ -69,5 +89,20 @@
     </div>
     <p>&copy; 2025 [State] Government Office. All rights reserved.</p>
   </footer>
+
+  <script>  /* JavaScript to watch for emails to match */
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        const email = document.getElementById("email").value;
+        const confirmEmail = document.getElementById("confirm_email").value;
+
+        if (email !== confirmEmail) {
+          alert("Email addresses do not match. Please check and try again.");
+          e.preventDefault(); // stop form from submitting
+        }
+      });
+    });
+  </script>
 </body>
 </html>
