@@ -17,8 +17,10 @@
         <a href="form.html">Contact</a>
       </nav>
     </div>
-    <div class="hero city-hero" style="background-image: url('https://via.placeholder.com/1200x400?text=Salt+Lake+City');">
-      <div class="breadcrumb">Home › Salt Lake City</div>
+    <div class="hero city-hero" style="background-image: url('Pic/SLC.jpg');">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> ›Salt Lake City
+      </div>
       <h2>Welcome to Salt Lake City</h2>
     </div>
   </header>
@@ -27,15 +29,47 @@
     <section class="city-info">
       <h2>About Salt Lake City</h2>
       <div class="city-nav-links">
-        <a href="#">Demographics</a> |
-        <a href="#">Weather Overview</a> |
-        <a href="#">History & Culture</a> |
-        <a href="#">Local Attractions</a>
+        <a href="#" onclick="showContent('demo')">Demographics</a> |
+        <a href="#" onclick="showContent('weather')">Weather Overview</a> |
+        <a href="#" onclick="showContent('history')">History & Culture</a> |
+        <a href="#" onclick="showContent('attractions')">Local Attractions</a>
       </div>
-      <p><strong>Text will change based on Above Selected</strong></p>
-      <p>Salt Lake City was incorporated in 1851 and is located in the North Central Utah region of Utah. It is classified as a Urban city. The average income level is Higher than state average compared to the state average.</p>
-      <p>This city is known for its major industries such as Government, Healthcare, Finance and offers a vibrant lifestyle for residents and visitors alike.</p>
+
+      <p id="city-description">
+        Click a category above to learn more about this city.
+      </p>
     </section>
+
+    <script>
+      function showContent(topic) {
+        const desc = document.getElementById("city-description");
+        const content = {
+          demo: `
+            <p>Salt Lake City is home to approximately 200,000 residents, making it the most populous city in Utah. The city features a diverse population with a growing number of Hispanic, Asian, and Pacific Islander communities contributing to its cultural richness. The median age is around 32 years, reflecting a young and dynamic population. Additionally, the city has a relatively high percentage of college-educated residents, due in part to its proximity to major universities like the University of Utah.</p>
+            <p>The city also maintains a balance between family households and individuals. Around 40% of households are families, while the remaining are primarily individuals or roommates, especially in neighborhoods close to the downtown core. Salt Lake City has also made significant efforts to support inclusivity, with a strong LGBTQ+ presence and progressive community programs focused on housing and equity.</p>
+          `,
+          weather: `
+            <p>Salt Lake City experiences a four-season climate with distinct seasonal changes. Winters are cold and snowy, especially due to the city’s location near the Wasatch Mountains, making it a prime destination for winter sports. Average snowfall exceeds 50 inches per year, and temperatures during the winter months can dip below freezing, particularly in January.</p>
+            <p>Summers, on the other hand, are hot and dry, with average highs in July reaching the low 90s (°F). The city's semi-arid climate means low humidity, though summer thunderstorms do occur. Spring and fall are generally mild and pleasant, making them popular times for hiking and outdoor festivals. The variety in weather supports a wide range of recreational activities all year round, from skiing in the winter to hiking and biking in the summer.</p>
+          `,
+          history: `
+            <p>Salt Lake City was founded in 1847 by Brigham Young and Mormon pioneers seeking religious freedom. It soon became the spiritual and administrative center of The Church of Jesus Christ of Latter-day Saints (LDS Church). Temple Square, located in the heart of downtown, remains one of the most visited religious and historical sites in the western United States, showcasing the city’s deep religious roots and 19th-century architecture.</p>
+            <p>Beyond its religious heritage, Salt Lake City has grown into a hub for arts and culture in the Intermountain West. The city hosts institutions like the Utah Museum of Fine Arts, Ballet West, and the Utah Symphony. The annual Sundance Film Festival, while held primarily in nearby Park City, draws international attention and spills cultural energy into Salt Lake City. With an increasing focus on inclusivity, the city is known for its welcoming atmosphere and diverse community events.</p>
+          `,
+          attractions: `
+            <p>Salt Lake City offers a rich mix of urban attractions and natural wonders. Temple Square is a must-see landmark, offering tours of the Salt Lake Temple and beautiful gardens. The Hogle Zoo and the Natural History Museum of Utah are family-friendly attractions located at the city’s eastern edge, close to scenic hiking trails. The city’s downtown features City Creek Center, a high-end shopping and dining destination built around a natural creek.</p>
+            <p>For outdoor enthusiasts, Salt Lake City serves as a gateway to the Wasatch Mountains, offering easy access to world-class skiing, hiking, and mountain biking. Red Butte Garden, Liberty Park, and the Great Salt Lake itself are favorite spots for locals and tourists alike. With a thriving craft food and coffee scene, combined with farmers markets and food truck rallies, Salt Lake City offers something for every type of visitor year-round.</p>
+          `
+        };
+
+        desc.innerHTML = content[topic] || "<p>Click a category above to learn more about this city.</p>";
+      }
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        showContent('demo');
+      });
+
+    </script>
 
     <aside class="quick-facts">
       <h3>Quick Facts</h3>
@@ -46,20 +80,31 @@
         <li>🏙 Classification: Urban</li>
         <li>💵 Income Level: Higher than state average</li>
         <li>🏭 Industries: Government, Healthcare, Finance</li>
+        <li>
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://maps.google.com/?q=Salt+Lake+City,+Utah" target="_blank">
+              <img src="Pic/Map.jpg" alt="Map of Salt Lake City">
+            </a>
+            <a href="https://maps.google.com/?q=Salt+Lake+City,+Utah" target="_blank">
+              Map of Salt Lake City
+            </a>
+          </span>
+</li>
       </ul>
 
       <div class="attractions">
-        <img src="https://via.placeholder.com/120x80?text=Temple+Square" alt="Temple Square">
-<span>Temple Square</span>
-<img src="https://via.placeholder.com/120x80?text=Hogle+Zoo" alt="Hogle Zoo">
-<span>Hogle Zoo</span>
-<img src="https://via.placeholder.com/120x80?text=City+Creek" alt="City Creek Center">
-<span>City Creek Center</span>
-      </div>
-
-      <div class="map-section">
-        <img src="https://via.placeholder.com/280x160?text=Salt+Lake+City+Map" alt="City Map">
-        <a href="#">View Larger Map →</a>
+        <div class="attraction-item">
+          <img src="Pic/Temple.jpg" alt="Temple Square">
+          <span>Temple Square</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/Zoo.jpg" alt="Hogle Zoo">
+          <span>Hogle Zoo</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/CityCreek.jpg" alt="City Creek Center">
+          <span>City Creek Center</span>
+        </div>
       </div>
     </aside>
   </main>
