@@ -18,55 +18,99 @@
       </nav>
     </div>
     <div class="hero city-hero" style="background-image: url('Pic/Provo.jpg');">
-      <div class="breadcrumb">Home › Provo</div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> ›Provo
+      </div>
       <h2>Welcome to Provo</h2>
     </div>
   </header>
-
+  ss
   <main class="interior-layout">
     <section class="city-info">
       <h2>About Provo</h2>
       <div class="city-nav-links">
-        <a href="#">Demographics</a> |
-        <a href="#">Weather Overview</a> |
-        <a href="#">History & Culture</a> |
-        <a href="#">Local Attractions</a>
+        <a href="#" onclick="showContent('demo')">Demographics</a> |
+        <a href="#" onclick="showContent('weather')">Weather Overview</a> |
+        <a href="#" onclick="showContent('history')">History & Culture</a> |
+        <a href="#" onclick="showContent('attractions')">Local Attractions</a>
       </div>
-      <p><strong>Text will change based on Above Selected</strong></p>
-      <p>Provo was incorporated in 1851 and is located in the Central Utah Valley region of Utah. It is classified as a Urban city. The average income level is About average compared to the state average.</p>
-      <p>This city is known for its major industries such as Education, Technology, Tourism and offers a vibrant lifestyle for residents and visitors alike.</p>
+
+      <p id="city-description">
+        Click a category above to learn more about this city.
+      </p>
     </section>
+
+    <script>
+      function showContent(topic) {
+        const desc = document.getElementById("city-description");
+        const content = {
+          demo: `
+            <p>Provo has a population of approximately 114,000 and is located in Utah County, central Utah. It has a predominantly young population due to the presence of Brigham Young University (BYU), one of the largest private universities in the country. The city has a high percentage of college-educated residents and maintains a strong academic and family-oriented atmosphere.</p>
+            <p>Provo features a growing tech sector and has been named one of the best places for business and careers in the U.S. The community is largely conservative, with strong ties to the LDS Church, and offers a high quality of life through educational, recreational, and entrepreneurial opportunities.</p>
+          `,
+          weather: `
+            <p>Provo experiences a temperate four-season climate. Winters are cold with occasional snowfall, while summers are hot and dry with temperatures regularly reaching the upper 80s and 90s (°F). Spring and fall are ideal for outdoor activities due to mild temperatures and scenic mountain views.</p>
+            <p>The proximity of Utah Lake and the Wasatch Mountains enhances recreational options year-round. Residents enjoy boating, fishing, skiing, hiking, and biking across the seasons, contributing to Provo’s reputation as an outdoor paradise.</p>
+          `,
+          history: `
+            <p>Founded in 1849, Provo was among the earliest Mormon settlements in Utah. The city developed quickly as a center for education and religion. Brigham Young University, established in 1875, became a cornerstone of the city’s growth and identity.</p>
+            <p>Today, Provo blends historical charm with modern innovation. Its downtown area is revitalized with restaurants, tech startups, and art venues. The city's history is preserved in landmarks like the Provo Pioneer Village and the Covey Center for the Arts.</p>
+          `,
+          attractions: `
+            <p>Provo’s attractions include BYU’s Museum of Art and Museum of Paleontology, which attract thousands of visitors annually. The scenic Provo Canyon features Bridal Veil Falls, a popular hiking and sightseeing destination just minutes from downtown.</p>
+            <p>The city also hosts the Provo Farmers Market and various cultural festivals throughout the year. Utah Lake State Park offers water-based recreation, while the Peaks Ice Arena—an Olympic venue—remains a popular spot for skating and events.</p>
+          `
+        };
+
+        desc.innerHTML = content[topic] || "<p>Click a category above to learn more about this city.</p>";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        showContent('demo');
+      });
+    </script>
 
     <aside class="quick-facts">
       <h3>Quick Facts</h3>
       <ul>
-        <li>👥 Population: 115,162</li>
+        <li>👥 Population: 114,084</li>
         <li>🗓 Incorporated: 1851</li>
-        <li>📍 Region: Central Utah Valley</li>
+        <li>📍 Region: Central Utah</li>
         <li>🏙 Classification: Urban</li>
-        <li>💵 Income Level: About average</li>
+        <li>💵 Income Level: Similar to state average</li>
         <li>🏭 Industries: Education, Technology, Tourism</li>
+        <li>
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://maps.google.com/?q=Provo,+Utah" target="_blank">
+              <img src="Pic/Map.jpg" alt="Map of Provo">
+            </a>
+            <a href="https://maps.google.com/?q=Provo,+Utah" target="_blank">
+              Map of Provo
+            </a>
+          </span>
+        </li>
       </ul>
 
       <div class="attractions">
-        <img src="https://via.placeholder.com/120x80?text=BYU+Campus" alt="BYU Campus">
-<span>BYU Campus</span>
-<img src="https://via.placeholder.com/120x80?text=Provo+Canyon" alt="Provo Canyon">
-<span>Provo Canyon</span>
-<img src="https://via.placeholder.com/120x80?text=Riverwoods" alt="Shops at Riverwoods">
-<span>Shops at Riverwoods</span>
-      </div>
-
-      <div class="map-section">
-        <img src="https://via.placeholder.com/280x160?text=Provo+Map" alt="City Map">
-        <a href="#">View Larger Map →</a>
+        <div class="attraction-item">
+          <img src="Pic/BYU.jpeg" alt="BYU Museum">
+          <span>BYU Museum</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/BridalFalls.jpg" alt="Bridal Veil Falls">
+          <span>Bridal Veil Falls</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/IceArena.jpg" alt="Peaks Ice Arena">
+          <span>Peaks Ice Arena</span>
+        </div>
       </div>
     </aside>
   </main>
 
   <footer>
     <div class="footer-links">
-      <a href="#">Contact Us</a> |
+      <a href="form.html">Contact Us</a> |
       <a href="#">About Us</a> |
       <a href="#">Privacy Policy</a> |
       <a href="#">Social Media</a>

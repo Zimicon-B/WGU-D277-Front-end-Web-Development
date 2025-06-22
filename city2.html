@@ -18,7 +18,9 @@
       </nav>
     </div>
     <div class="hero city-hero" style="background-image: url('Pic/Ogden.jpg');">
-      <div class="breadcrumb">Home › Ogden</div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> ›Ogden
+      </div>
       <h2>Welcome to Ogden</h2>
     </div>
   </header>
@@ -27,15 +29,46 @@
     <section class="city-info">
       <h2>About Ogden</h2>
       <div class="city-nav-links">
-        <a href="#">Demographics</a> |
-        <a href="#">Weather Overview</a> |
-        <a href="#">History & Culture</a> |
-        <a href="#">Local Attractions</a>
+        <a href="#" onclick="showContent('demo')">Demographics</a> |
+        <a href="#" onclick="showContent('weather')">Weather Overview</a> |
+        <a href="#" onclick="showContent('history')">History & Culture</a> |
+        <a href="#" onclick="showContent('attractions')">Local Attractions</a>
       </div>
-      <p><strong>Text will change based on Above Selected</strong></p>
-      <p>Ogden was incorporated in 1851 and is located in the Northern Utah region of Utah. It is classified as a Urban/Suburban city. The average income level is Lower than state average compared to the state average.</p>
-      <p>This city is known for its major industries such as Manufacturing, Logistics, Aerospace and offers a vibrant lifestyle for residents and visitors alike.</p>
+
+      <p id="city-description">
+        Click a category above to learn more about this city.
+      </p>
     </section>
+
+    <script>
+      function showContent(topic) {
+        const desc = document.getElementById("city-description");
+        const content = {
+          demo: `
+            <p>Ogden has a population of just over 87,000 and is situated in Northern Utah. It features a mix of urban and suburban characteristics, with a strong community of working professionals, young families, and college students. The city has a lower average income than the state average but a comparably low cost of living, making it an affordable option for many residents.</p>
+            <p>Ogden is home to Weber State University and boasts a culturally diverse population. It has a solid base of both historic neighborhoods and new developments, with a growing interest in outdoor recreation and sustainable living.</p>
+          `,
+          weather: `
+            <p>Ogden experiences a full range of seasons, from snowy winters to warm, sunny summers. Winters are typically cold and bring ample snowfall, particularly appreciated by skiers visiting the nearby Wasatch Mountains. The city receives about 40 inches of snow annually.</p>
+            <p>Summers are hot and dry, with average highs reaching into the 90s (°F). Spring and fall are mild and enjoyable. The seasonal changes support a wide range of outdoor activities throughout the year, including hiking, biking, and fishing.</p>
+          `,
+          history: `
+            <p>Ogden was one of the first permanent settlements in Utah, incorporated in 1851. It quickly became a vital railroad hub, serving as a gateway to the West. Historic 25th Street still reflects the old charm and importance of the railroad era.</p>
+            <p>Today, Ogden maintains its historical identity while embracing modern development. It features a blend of restored historic buildings, museums, and new businesses, making it a unique and vibrant place to live or visit.</p>
+          `,
+          attractions: `
+            <p>Ogden’s top attractions include the Hill Aerospace Museum, which displays a large collection of aircraft and military artifacts. The Ogden Nature Center offers trails, wildlife exhibits, and environmental education for all ages.</p>
+            <p>Historic 25th Street is a lively destination filled with shops, galleries, and eateries. The city also offers proximity to world-class ski resorts and mountain trails, making it ideal for outdoor lovers year-round.</p>
+          `
+        };
+
+        desc.innerHTML = content[topic] || "<p>Click a category above to learn more about this city.</p>";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        showContent('demo');
+      });
+    </script>
 
     <aside class="quick-facts">
       <h3>Quick Facts</h3>
@@ -46,27 +79,38 @@
         <li>🏙 Classification: Urban/Suburban</li>
         <li>💵 Income Level: Lower than state average</li>
         <li>🏭 Industries: Manufacturing, Logistics, Aerospace</li>
+        <li>
+          <span style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://maps.google.com/?q=Ogden,+Utah" target="_blank">
+              <img src="Pic/Map.jpg" alt="Map of Ogden">
+            </a>
+            <a href="https://maps.google.com/?q=Ogden,+Utah" target="_blank">
+              Map of Ogden
+            </a>
+          </span>
+        </li>
       </ul>
 
       <div class="attractions">
-        <img src="https://via.placeholder.com/120x80?text=Hill+AFB+Museum" alt="Hill Aerospace Museum">
-<span>Hill Aerospace Museum</span>
-<img src="https://via.placeholder.com/120x80?text=Ogden+Nature" alt="Ogden Nature Center">
-<span>Ogden Nature Center</span>
-<img src="https://via.placeholder.com/120x80?text=25th+Street" alt="Historic 25th Street">
-<span>Historic 25th Street</span>
-      </div>
-
-      <div class="map-section">
-        <img src="https://via.placeholder.com/280x160?text=Ogden+Map" alt="City Map">
-        <a href="#">View Larger Map →</a>
+        <div class="attraction-item">
+          <img src="Pic/HillAFB.jpg" alt="Hill Aerospace Museum">
+          <span>Hill Aerospace Museum</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/Nature.jpg" alt="Ogden Nature Center">
+          <span>Ogden Nature Center</span>
+        </div>
+        <div class="attraction-item">
+          <img src="Pic/25thStreet.jpg" alt="Historic 25th Street">
+          <span>Historic 25th Street</span>
+        </div>
       </div>
     </aside>
   </main>
 
   <footer>
     <div class="footer-links">
-      <a href="#">Contact Us</a> |
+      <a href="form.html">Contact Us</a> |
       <a href="#">About Us</a> |
       <a href="#">Privacy Policy</a> |
       <a href="#">Social Media</a>
